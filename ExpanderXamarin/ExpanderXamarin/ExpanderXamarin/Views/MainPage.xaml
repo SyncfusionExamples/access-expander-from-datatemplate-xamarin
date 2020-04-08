@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ExpanderXamarin"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Expander;assembly=Syncfusion.Expander.XForms"
+             xmlns:sfPopup="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+             x:Class="ExpanderXamarin.MainPage">
+    <ContentPage.Content>
+        <sfPopup:SfPopupLayout x:Name="popupLayout" Margin="{OnPlatform iOS='0,40,0,0'}">
+            <sfPopup:SfPopupLayout.Behaviors>
+                <local:PopupBehavior/>
+            </sfPopup:SfPopupLayout.Behaviors>
+            <sfPopup:SfPopupLayout.PopupView>
+                <sfPopup:PopupView WidthRequest="400" HeightRequest="400" ShowFooter="False">
+                    <sfPopup:PopupView.ContentTemplate>
+                        <DataTemplate>
+                            <ScrollView BackgroundColor="#EDF2F5" Grid.Row="1">                                   
+                                    <StackLayout>
+                                    <StackLayout.Behaviors>
+                                        <local:Behavior/>
+                                    </StackLayout.Behaviors>
+                                    <Button Text="Expand/Collapse Second Expander" x:Name="expanderButton" BackgroundColor="LightGray"/>
+                                    <syncfusion:SfExpander x:Name="firstExpander">
+                                            <syncfusion:SfExpander.Header>
+                                                <Grid>
+                                                    <Label Text="Invoice Date" HeightRequest="40" TextColor="#495F6E"
+                                                           VerticalTextAlignment="Center" Margin="5"/>
+                                                </Grid>
+                                            </syncfusion:SfExpander.Header>
+                                            <syncfusion:SfExpander.Content>
+                                                <Grid>
+                                                    <Label BackgroundColor="#FFFFFF" TextColor="#303030"
+                                                           HeightRequest="40" Text="11.03 AM, 15 January 2019"
+                                                           VerticalTextAlignment="Center" />
+                                                </Grid>
+                                            </syncfusion:SfExpander.Content>
+                                        </syncfusion:SfExpander>
+
+                                        <syncfusion:SfExpander x:Name="secondExpander">
+                                            <syncfusion:SfExpander.Header>
+                                                <Grid>
+                                                <Label Text="Item (s)" TextColor="#495F6E" HeightRequest="40"
+                                                           VerticalTextAlignment="Center" Margin="5"/>
+                                                </Grid>
+                                            </syncfusion:SfExpander.Header>
+                                            <syncfusion:SfExpander.Content>
+                                                <Grid Padding="10,10,10,10" BackgroundColor="#FFFFFF">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Text="2018 Subaru Outback" TextColor="#303030" HeightRequest="40"/>
+                                                    <Label Grid.Row="1" Text="All-Weather Mats" TextColor="#303030" HeightRequest="40"/>
+                                                    <Label Grid.Row="2" Text="Door Edge Guard Kit" TextColor="#303030" HeightRequest="40"/>
+                                                    <Label Grid.Row="3" Text="Rear Bumper Cover" TextColor="#303030" HeightRequest="40"/>
+                                                    <Label Grid.Row="4" FontAttributes="Bold" TextColor="#303030"
+                                                           Text="Total Amount Paid" HeightRequest="40"/>
+                                                    <Label Grid.Column="1" HorizontalTextAlignment="End"
+                                                           Text="$35,700.00" TextColor="#303030" HeightRequest="40"/>
+                                                    <Label Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="End"
+                                                           Text="$105.00" TextColor="#303030" HeightRequest="40"/>
+                                                    <Label Grid.Row="2" Grid.Column="1" Text="$100.00"
+                                                           HorizontalTextAlignment="End" TextColor="#303030" HeightRequest="40"/>
+                                                    <Label Grid.Row="3" Grid.Column="1" Text="$95.00"
+                                                           HorizontalTextAlignment="End" TextColor="#303030" HeightRequest="40"/>
+                                                    <Label Grid.Row="4" Grid.Column="1" FontAttributes="Bold"
+                                                           HorizontalTextAlignment="End" Text="$36,000.00" HeightRequest="40"
+                                                           TextColor="#303030" />
+                                                </Grid>
+                                            </syncfusion:SfExpander.Content>
+                                        </syncfusion:SfExpander>
+
+                                    <syncfusion:SfExpander x:Name="thirdExpander">
+                                            <syncfusion:SfExpander.Header>
+                                                <Grid>
+                                                    <Label Text="Payment Details" TextColor="#495F6E" Margin="5"
+                                                           VerticalTextAlignment="Center" HeightRequest="40"/>
+                                                </Grid>
+                                            </syncfusion:SfExpander.Header>
+
+                                            <syncfusion:SfExpander.Content>
+                                                <Grid Padding="10,10,10,10" BackgroundColor="#FFFFFF">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Text="Card Payment" TextColor="#303030" HeightRequest="40"/>
+                                                    <Label Grid.Row="1" Text="Third-Party coupons"
+                                                           TextColor="#303030" HeightRequest="40"/>
+                                                    <Label Grid.Row="2" FontAttributes="Bold" HeightRequest="40"
+                                                           Text="Total Amount Paid" TextColor="#303030" />
+                                                    <Label Grid.Column="1" HorizontalTextAlignment="End"
+                                                           Text="$31,000.00" TextColor="#303030" HeightRequest="40"/>
+                                                    <Label Grid.Row="1" Grid.Column="1" Text="$5,000.00" HeightRequest="40"
+                                                           HorizontalTextAlignment="End" TextColor="#303030" />
+                                                    <Label Grid.Row="2" Grid.Column="1" FontAttributes="Bold"
+                                                           HorizontalTextAlignment="End" Text="$36,000.00"
+                                                           TextColor="#303030" HeightRequest="40"/>
+                                                </Grid>
+                                            </syncfusion:SfExpander.Content>
+                                        </syncfusion:SfExpander>
+                                    </StackLayout>
+                                </ScrollView>
+                        </DataTemplate>
+                    </sfPopup:PopupView.ContentTemplate>
+                </sfPopup:PopupView>
+            </sfPopup:SfPopupLayout.PopupView>
+            <sfPopup:SfPopupLayout.Content>
+                <Grid x:Name="popupGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="ShowPopup" Text="Bring Popup" />
+                </Grid>
+            </sfPopup:SfPopupLayout.Content>
+        </sfPopup:SfPopupLayout>
+    </ContentPage.Content>
+</ContentPage>
